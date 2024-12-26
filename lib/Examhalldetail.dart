@@ -1,3 +1,4 @@
+import 'package:examinationseatingarrangement/presentation/student/viewExamHall.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
@@ -13,21 +14,19 @@ class _ExamhallState extends State<Examhall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100], // Light background color for better contrast
+      backgroundColor:
+          Colors.grey[100], // Light background color for better contrast
       appBar: AppBar(
-        title: Text('Examination Details'),
+        title: Text('Examination Schedule'),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
         elevation: 4.0, // Subtle shadow for the app bar
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0), // Padding around the content
-        child: ListView(
-          children: [
-            _buildExamDetailsCard(),
-            SizedBox(height: 30), // Space between sections
-            _buildActionButton(),
-          ],
+        child: ListView.builder(
+          itemBuilder: (context, index) => _buildExamDetailsCard(),
+          itemCount: 4,
         ),
       ),
     );
@@ -49,6 +48,8 @@ class _ExamhallState extends State<Examhall> {
             _buildRow(Icons.access_time, 'Time', '01:30 PM'),
             _buildRow(Icons.timer, 'Duration', '2 hours'),
             _buildRow(Icons.person, 'Student No.', '36'),
+            SizedBox(height: 30), // Space between sections
+            _buildActionButton(),
           ],
         ),
       ),
@@ -95,6 +96,8 @@ class _ExamhallState extends State<Examhall> {
   Widget _buildActionButton() {
     return ElevatedButton(
       onPressed: () {
+        Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) =>SeatingArrangementScreen ()));
         // Handle button click, e.g., for navigating to another page
       },
       style: ElevatedButton.styleFrom(
@@ -106,13 +109,12 @@ class _ExamhallState extends State<Examhall> {
         elevation: 5.0,
       ),
       child: Text(
-        'Back to  Home',
+        'view seating',
         style: TextStyle(
           fontSize: 18.0,
           fontWeight: FontWeight.bold,
         ),
       ),
     );
- 
   }
 }

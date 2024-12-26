@@ -1,3 +1,8 @@
+import 'package:examinationseatingarrangement/CustComplaint.dart';
+import 'package:examinationseatingarrangement/Examhalldetail.dart';
+import 'package:examinationseatingarrangement/Feedback.dart';
+import 'package:examinationseatingarrangement/presentation/student/viewExamHall.dart';
+import 'package:examinationseatingarrangement/viewMap.dart';
 import 'package:flutter/material.dart';
 
 class StudentHomePage extends StatefulWidget {
@@ -42,8 +47,10 @@ class _StudentHomePageState extends State<StudentHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.map),
-              title: Text('Navigation'),
+              title: Text('Complaint'),
               onTap: () {
+                Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => Complaint()));
                 // Handle profile tap
               },
             ),
@@ -73,9 +80,12 @@ class _StudentHomePageState extends State<StudentHomePage> {
               children: [
                 _buildDecoratedContainer(
                   color: const Color.fromARGB(221, 173, 65, 148),
-                  icon: Icons.holiday_village,
-                  label: 'Exam Hall',
+                  icon: Icons.comment,
+                  label: 'complaint',
                   onTap: () { 
+                    Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => Complaint()));
+
                     // Navigate to Exam Hall page
                   },
                 ),
@@ -84,6 +94,9 @@ class _StudentHomePageState extends State<StudentHomePage> {
                   icon: Icons.schedule,
                   label: 'Exam Schedule',
                   onTap: () {
+                    Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => Examhall()));
+
                     // Navigate to Exam Schedule page
                   },
                 ),
@@ -98,6 +111,9 @@ class _StudentHomePageState extends State<StudentHomePage> {
                   icon: Icons.map,
                   label: 'Navigation',
                   onTap: () {
+                    Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => LocationsScreen()));
+
                     // Navigate to Profile page
                     print('object');
                   },
@@ -107,6 +123,8 @@ class _StudentHomePageState extends State<StudentHomePage> {
                   icon: Icons.feedback,
                   label: 'Feedback',
                   onTap: () {
+                     Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => CustomFeedback()));
                     // Navigate to Reporting page
                   },
                 ),

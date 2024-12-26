@@ -9,15 +9,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController usernameController=TextEditingController();
-   TextEditingController passwordController=TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-         height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [Colors.blueAccent, Colors.cyan],
@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: Colors.white,
                 ),
                 SizedBox(height: 40),
-                
+
                 // Title Text
                 Text(
                   'Welcome Back!',
@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(height: 20),
-        
+
                 // Username TextField
                 TextFormField(
                   controller: usernameController,
@@ -64,11 +64,12 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     filled: true,
                     fillColor: Colors.white.withOpacity(0.2),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                   ),
                 ),
                 SizedBox(height: 20),
-        
+
                 // Password TextField
                 TextFormField(
                   controller: passwordController,
@@ -83,15 +84,17 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     filled: true,
                     fillColor: Colors.white.withOpacity(0.2),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                   ),
                 ),
                 SizedBox(height: 30),
-        
+
                 // Login Button
                 ElevatedButton(
-                  onPressed: ()async {
-await loginfun(usernameController.text,passwordController.text);
+                  onPressed: () async {
+                    await loginfun(
+                        usernameController.text, passwordController.text,context);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent,
@@ -107,7 +110,7 @@ await loginfun(usernameController.text,passwordController.text);
                   ),
                 ),
                 SizedBox(height: 20),
-        
+
                 // Sign Up Text Button
                 TextButton(
                   onPressed: () {},

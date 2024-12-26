@@ -1,5 +1,10 @@
+import 'package:examinationseatingarrangement/CustComplaint.dart';
 import 'package:examinationseatingarrangement/Examhalldetail.dart';
+import 'package:examinationseatingarrangement/Feedback.dart';
+import 'package:examinationseatingarrangement/presentation/student/viewExamHall.dart';
+import 'package:examinationseatingarrangement/presentation/teacher/Studentdetails.dart';
 import 'package:examinationseatingarrangement/presentation/teacher/studentmalpractice.dart';
+import 'package:examinationseatingarrangement/viewMap.dart';
 import 'package:flutter/material.dart';
 
 class TeacherHomePage extends StatefulWidget {
@@ -37,6 +42,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
               leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
+                Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => CustomFeedback()));
                 // Handle settings tap
                 // Navigator.push(
                 //   context,
@@ -48,6 +55,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
               leading: Icon(Icons.comment),
               title: Text('Complaints'),
               onTap: () {
+                Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => Complaint()));
                 // Handle profile tap
                 // Navigator.push(
                 //   context,
@@ -59,6 +68,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
               leading: Icon(Icons.logout),
               title: Text('Logout'),
               onTap: () {
+                Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => CustomFeedback()));
                 // Handle logout tap
                 _logout();
               },
@@ -92,7 +103,7 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                   onTap: () {
                     Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Examhall()), // Replace with your SettingsPage
+                  MaterialPageRoute(builder: (context) => SeatingArrangementScreen()), // Replace with your SettingsPage
                 );
                     
                   },
@@ -103,6 +114,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                   icon: Icons.people, // Updated icon for student details
                   label: 'Student Details',
                   onTap: () {
+                    Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => Studentdetail()));
                     // Navigate to student details page
                     // Navigator.push(
                     //   context,
@@ -124,6 +137,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                   icon: Icons.account_circle, // Updated icon for profile
                   label: 'Duty Profile',
                   onTap: () {
+                    Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => CustomFeedback()));
                     // Navigate to profile page
                     // Navigator.push(
                     //   context,
@@ -137,6 +152,8 @@ class _TeacherHomePageState extends State<TeacherHomePage> {
                   icon: Icons.account_circle, // Updated icon for profile
                   label: 'Reporting',
                   onTap: () {
+                    Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => CustomFeedback()));
                  
                     Navigator.push(
                       context,
@@ -153,6 +170,8 @@ SizedBox(height: 40),
                   icon: Icons.map,
                   label: 'Navigation',
                   onTap: () {
+                    Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => LocationsScreen()));
                     // Navigate to Profile page
                     print('object');
                   },
@@ -163,6 +182,8 @@ SizedBox(height: 40),
                   icon: Icons.feedback,
                   label: 'Feedback',
                   onTap: () {
+                     Navigator.push(
+              context, MaterialPageRoute(builder: (ctxt) => CustomFeedback()));
                     // Navigate to Reporting page
                   },
                 ),],)

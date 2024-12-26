@@ -1,22 +1,21 @@
 import 'package:dio/dio.dart';
+import 'package:examinationseatingarrangement/services/loginapi.dart';
 
 
   final Dio dio = Dio();
 
   // Define the POST request for submitting feedback
   Future<Map<String, dynamic>> submitFeedbackapi({
-    required String name,
-    required String email,
+    
     required String feedback,
   }) async {
-    const String baseUrl = "https://your-api-url.com";  // Replace with your base URL
+     // Replace with your base URL
 
     try {
       final response = await dio.post(
         '$baseUrl/submitFeedback',  // Example endpoint for feedback submission
         data: {
-          'name': name,
-          'email': email,
+        'lid':lid,
           'feedback': feedback,
         },
       );

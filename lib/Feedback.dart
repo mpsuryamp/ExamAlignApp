@@ -1,3 +1,4 @@
+import 'package:examinationseatingarrangement/services/Feedbackapi.dart';
 import 'package:flutter/material.dart';
 
 class CustomFeedback extends StatefulWidget {
@@ -8,6 +9,7 @@ class CustomFeedback extends StatefulWidget {
 }
 
 class _CustomFeedbackState extends State<CustomFeedback> {
+  TextEditingController feedbsckController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +25,7 @@ class _CustomFeedbackState extends State<CustomFeedback> {
           child: Column(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TextFormField(
+                controller: feedbsckController,
                 decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
@@ -33,7 +36,10 @@ class _CustomFeedbackState extends State<CustomFeedback> {
               ),
               SizedBox(height: 10),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                    await submitFeedbackapi(feedback: feedbsckController.text
+                        );
+                  },
                 child: Text('SUBMIT'),
               ),
             ],
