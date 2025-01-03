@@ -1,19 +1,19 @@
 import 'package:dio/dio.dart';
+import 'package:examinationseatingarrangement/services/loginapi.dart';
 
 
   final Dio dio = Dio();
 
   // Submit complaint API
-  Future<Map<String, dynamic>> submitComplaintapi(String complaintType, String description, String userId) async {
-    const String baseUrl = "https://your-api-url.com";  // Replace with your API base URL
+  Future<Map<String, dynamic>> submitComplaintapi(String complaint) async {
+    // const String baseUrl = "https://your-api-url.com";  // Replace with your API base URL
 
     try {
       final response = await dio.post(
-        '$baseUrl/submit_complaint',  // Example endpoint for complaint submission
+        '$baseUrl/Complaintapi',  // Example endpoint for complaint submission
         data: {
-          'complaint_type': complaintType,
-          'description': description,
-          'user_id': userId,
+          'complaint': complaint,
+          'user_lid': lid,
         },
       );
 
